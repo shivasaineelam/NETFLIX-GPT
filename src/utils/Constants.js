@@ -14,3 +14,4 @@ export const options = {
 };
 export const MOVIELINKP1 = "https://api.themoviedb.org/3/movie/";
 export const MOVIELINKP2 = "/videos?language=en-US";
+export const api_key = "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";

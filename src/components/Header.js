@@ -5,11 +5,13 @@ import { auth } from "../utils/firebase";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGOUT_LOGO, NETFLIX_LOGO } from "../utils/Constants";
+import { gptpagechange } from "../utils/GPTSlice";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const showgptpage = useSelector((store) => store.gpt.showgptpage);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -49,8 +51,19 @@ const Header = () => {
         <div className="">
           <img alt="logo" className=" w-36  " src={NETFLIX_LOGO}></img>
         </div>
+
         {user && (
-          <div className="mx-4 cursor-pointer justify-between flex w-40">
+          <div className="mx-4 cursor-pointer justify-between flex w-64">
+            <div>
+              <button
+                className="bg-purple-700 p-2 m-2 rounded-lg "
+                onClick={() => {
+                  dispatch(gptpagechange(!showgptpage));
+                }}
+              >
+                {showgptpage ? "HomePage" : "GPTpage"}
+              </button>
+            </div>
             <img
               alt="logo2"
               className="w-12 rounded-lg"

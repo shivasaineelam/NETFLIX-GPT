@@ -18,9 +18,9 @@ const useMovieList = (type) => {
 
     const json = await data.json();
     if (type === "now_playing") dispatch(addNowPlayingLists(json.results));
-    if (type === "popular") dispatch(addPopularLists(json.results));
-    if (type === "top_rated") dispatch(addTopRatedLists(json.results));
-    if (type === "upcoming") dispatch(addUpcomingLists(json.results));
+    else if (type === "popular") dispatch(addPopularLists(json.results));
+    else if (type === "top_rated") dispatch(addTopRatedLists(json.results));
+    else if (type === "upcoming") dispatch(addUpcomingLists(json.results));
   };
   useEffect(() => {
     getmovielistdata();

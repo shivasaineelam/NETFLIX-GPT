@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const BackgroundTitle = () => {
   const backgroundmovie = useSelector((store) => store.movie.nowplaying);
   if (!backgroundmovie) return;
-  const background = backgroundmovie[7];
+  const background = backgroundmovie[6];
 
   return (
     <div className="pt-52 pl-12 absolute text-white w-screen aspect-video bg-gradient-to-r from-black">

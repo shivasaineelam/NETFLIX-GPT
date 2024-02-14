@@ -3,7 +3,7 @@ import MovieList from "./MovieList";
 
 const MovieListContainer = ({ title, movies }) => {
   return (
-    <div className="overflow-x-scroll p-2">
+    <div className="overflow-x-scroll p-2 bg-black">
       <h1 className="text-3xl font-bold ">{title}</h1>
       <div className="flex m-5">
         {movies &&

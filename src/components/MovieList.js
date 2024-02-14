@@ -1,6 +1,7 @@
 import React from "react";
 
 const MovieList = ({ poster_path, title }) => {
+  if (!poster_path) return null;
   return (
     <div className="w-52 mx-3 ">
       <img
